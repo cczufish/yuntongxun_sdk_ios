@@ -12,25 +12,27 @@ Pod::Spec.new do |s|
 
   s.license      = "COMMERCIAL"
 
-  s.author             = { "yuntongxun" => "yuntongxun.com" }
+  s.author        = { "yuntongxun" => "yuntongxun.com" }
  
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "http://EXAMPLE/my.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/cczufish/yuntongxun_sdk_ios.git"}
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "*.h", "Delegate/*.h","Manager/*.h","enums/*.h","types/*.h"
+  
+  s.public_header_files     = "*.h"
+
+  s.vendored_libraries      = "lib/*.a"
 
   s.resources = "Resources/*.png"
 
-  s.frameworks = "SomeFramework", "AnotherFramework"
+  s.frameworks              = "CFNetwork", "SystemConfiguration", "MobileCoreServices","AudioToolbox","CoreGraphics","AVFoundation","MediaPlayer"
 
   # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
+  s.libraries = "libsqlite3", "libz", "libxml2"
 
-  s.requires_arc = true
+  #s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
 end
