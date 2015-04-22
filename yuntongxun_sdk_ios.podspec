@@ -28,10 +28,8 @@ Pod::Spec.new do |s|
 
   s.frameworks              = "CFNetwork", "SystemConfiguration", "MobileCoreServices","AudioToolbox","CoreGraphics","AVFoundation","MediaPlayer"
 
-  # s.library   = "iconv"
-  s.libraries = "libsqlite3", "libz", "libxml2"
-
-  #s.requires_arc = true
+  s.library   = "iconv"
+  s.libraries = "iconv","libsqlite3", "libz", "libxml2"
 
   s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
